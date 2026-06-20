@@ -1,11 +1,15 @@
 "use client";
 
+import { Button } from "@/components/ui/Button";
+
 export function BackToTop() {
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="sm"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className="text-muted hover:text-primary"
     >
       Back to top
       <svg
@@ -22,6 +26,6 @@ export function BackToTop() {
       >
         <path d="m18 15-6-6-6 6" />
       </svg>
-    </button>
+    </Button>
   );
 }
