@@ -5,7 +5,7 @@ export default function HomePage() {
   const featuredProjects = getFeaturedProjects();
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
+    <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
       <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
         Portfolio — Phase 0 Complete
       </p>
@@ -23,6 +23,6 @@ export default function HomePage() {
           <li>Content layer with Zod validation</li>
         </ul>
       </div>
-    </main>
+    </div>
   );
 }
