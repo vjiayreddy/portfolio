@@ -1,7 +1,7 @@
 "use client";
 
 import { StaggerContainer, StaggerItem } from "@/components/motion/Stagger";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 import type { Project } from "@/types";
 
 export function FeaturedProjectsGrid({ projects }: { projects: Project[] }) {

@@ -23,14 +23,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <CardHeader>
-        <CardTitle className="group-hover:text-primary transition-colors">
+        <CardTitle className="transition-colors group-hover:text-primary">
           <Link href={`/projects/${project.slug}`}>{project.title}</Link>
         </CardTitle>
         <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1">
         <div className="flex flex-wrap gap-2">
-          {project.technologies.slice(0, 4).map((tech) => (
+          {project.technologies.map((tech) => (
             <Badge key={tech} variant="outline">
               {tech}
             </Badge>

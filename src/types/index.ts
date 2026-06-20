@@ -56,6 +56,10 @@ export interface Certification {
   url: string;
 }
 
+export interface AboutContent {
+  bio: string;
+}
+
 export interface ProjectFrontmatter {
   title: string;
   slug: string;

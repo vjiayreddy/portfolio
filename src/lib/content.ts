@@ -8,6 +8,7 @@ import type {
   Experience,
   Education,
   Certification,
+  AboutContent,
   Project,
   ProjectFrontmatter,
 } from "@/types";
@@ -76,6 +77,15 @@ export function getCertifications(): Certification[] {
     "certifications.json"
   );
   return data.certifications;
+}
+
+export function getAboutContent(): AboutContent {
+  return readJsonFile<AboutContent>("about.json");
+}
+
+export function getInterests(): string[] {
+  const data = readJsonFile<{ interests: string[] }>("interests.json");
+  return data.interests;
 }
 
 export function getAllProjects(): Project[] {

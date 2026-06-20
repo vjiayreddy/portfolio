@@ -1,10 +1,20 @@
-import { PageContent } from "@/components/layout/PageContent";
+import { SkillsGrid } from "@/components/skills/SkillsGrid";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { createMetadata } from "@/lib/metadata";
+import { getSkills } from "@/lib/content";
+
+export const metadata = createMetadata({
+  title: "Skills",
+  description: "Technical skills across frontend, backend, cloud, databases, and developer tools.",
+  path: "/skills",
+});
 
 export default function SkillsPage() {
+  const skills = getSkills();
+
   return (
-    <PageContent>
-      <h1 className="text-3xl font-bold">Skills</h1>
-      <p className="mt-4 text-muted">Coming in Sprint 2.</p>
-    </PageContent>
+    <ScrollReveal>
+      <SkillsGrid categories={skills} />
+    </ScrollReveal>
   );
 }
