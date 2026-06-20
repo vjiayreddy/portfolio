@@ -1,0 +1,44 @@
+{
+  "experiences": [
+    {
+      "id": "exp-1",
+      "company": "Tech Company Inc.",
+      "role": "Senior Full-Stack Developer",
+      "location": "Remote",
+      "startDate": "2022-01",
+      "endDate": null,
+      "current": true,
+      "description": "Leading development of customer-facing web applications and internal tools.",
+      "responsibilities": [
+        "Architected and built Next.js applications serving 50k+ monthly users",
+        "Mentored junior developers and established code review practices",
+        "Integrated payment systems and third-party APIs"
+      ],
+      "achievements": [
+        "Reduced page load time by 40% through performance optimization",
+        "Shipped 3 major product features ahead of schedule"
+      ],
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": "exp-2",
+      "company": "Startup Labs",
+      "role": "Full-Stack Developer",
+      "location": "San Francisco, CA",
+      "startDate": "2019-06",
+      "endDate": "2021-12",
+      "current": false,
+      "description": "Built MVP and scaled platform from 0 to 10k users.",
+      "responsibilities": [
+        "Developed React frontend and Node.js backend services",
+        "Implemented CI/CD pipelines and automated testing",
+        "Collaborated with design team on UX improvements"
+      ],
+      "achievements": [
+        "Launched product that raised $2M in seed funding",
+        "Achieved 99.9% uptime over 18 months"
+      ],
+      "technologies": ["React", "Node.js", "MongoDB", "Docker"]
+    }
+  ]
+}

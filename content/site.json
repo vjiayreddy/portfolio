@@ -1,0 +1,17 @@
+{
+  "name": "Your Name",
+  "title": "Full-Stack Developer",
+  "tagline": "Building modern, high-performance web applications",
+  "email": "hello@example.com",
+  "location": "City, Country",
+  "summary": "Passionate full-stack developer with expertise in Next.js, React, and cloud-native architectures. I craft scalable, user-focused products from concept to deployment.",
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  },
+  "seo": {
+    "title": "Your Name — Full-Stack Developer",
+    "description": "Portfolio showcasing projects, skills, and professional experience in modern web development."
+  }
+}
