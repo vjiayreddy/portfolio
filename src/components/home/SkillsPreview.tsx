@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/Badge";
 import { buttonClassName } from "@/components/ui/Button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SkillsPreviewGrid } from "./SkillsPreviewGrid";
 import type { SkillCategory } from "@/types";
 
 export function SkillsPreview({ categories }: { categories: SkillCategory[] }) {
@@ -24,33 +23,7 @@ export function SkillsPreview({ categories }: { categories: SkillCategory[] }) {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {previewCategories.map((category) => (
-            <Card key={category.name} className="h-full">
-              <CardHeader>
-                <CardTitle>{category.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {category.skills.slice(0, 4).map((skill) => (
-                  <div key={skill.name}>
-                    <div className="mb-1.5 flex items-center justify-between gap-3">
-                      <Badge variant="secondary">{skill.name}</Badge>
-                      <span className="text-xs font-medium text-muted">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-secondary">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <SkillsPreviewGrid categories={previewCategories} />
       </Container>
     </section>
   );

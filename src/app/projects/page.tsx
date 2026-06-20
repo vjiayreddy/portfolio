@@ -1,3 +1,4 @@
+import { PageContent } from "@/components/layout/PageContent";
 import { getAllProjects, getAllTechnologies } from "@/lib/content";
 
 export default function ProjectsPage() {
@@ -5,11 +6,11 @@ export default function ProjectsPage() {
   const technologies = getAllTechnologies();
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-24">
+    <PageContent>
       <h1 className="text-3xl font-bold">Projects</h1>
       <p className="mt-4 text-muted">
         {projects.length} projects · {technologies.length} technologies — gallery UI coming in Sprint 2.
       </p>
-    </div>
+    </PageContent>
   );
 }

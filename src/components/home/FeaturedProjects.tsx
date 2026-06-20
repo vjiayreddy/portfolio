@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buttonClassName } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ProjectCard } from "./ProjectCard";
+import { FeaturedProjectsGrid } from "./FeaturedProjectsGrid";
 import type { Project } from "@/types";
 
 export function FeaturedProjects({ projects }: { projects: Project[] }) {
@@ -24,11 +24,7 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <FeaturedProjectsGrid projects={projects} />
       </Container>
     </section>
   );

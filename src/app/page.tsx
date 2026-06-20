@@ -3,6 +3,8 @@ import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { HeroSection } from "@/components/home/HeroSection";
 import { SkillsPreview } from "@/components/home/SkillsPreview";
 import { SummarySection } from "@/components/home/SummarySection";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import {
   getFeaturedProjects,
   getSiteConfig,
@@ -16,11 +18,21 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroSection site={site} />
-      <SummarySection summary={site.summary} />
-      <SkillsPreview categories={skills} />
-      <FeaturedProjects projects={featuredProjects} />
-      <CTABanner site={site} />
+      <FadeIn>
+        <HeroSection site={site} />
+      </FadeIn>
+      <ScrollReveal>
+        <SummarySection summary={site.summary} />
+      </ScrollReveal>
+      <ScrollReveal delay={0.05}>
+        <SkillsPreview categories={skills} />
+      </ScrollReveal>
+      <ScrollReveal delay={0.05}>
+        <FeaturedProjects projects={featuredProjects} />
+      </ScrollReveal>
+      <ScrollReveal delay={0.05}>
+        <CTABanner site={site} />
+      </ScrollReveal>
     </>
   );
 }
