@@ -10,3 +10,4 @@ export {
 } from "./Card";
 export { Container } from "./Container";
 export { Input, type InputProps } from "./Input";
+export { SectionHeading } from "./SectionHeading";
