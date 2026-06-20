@@ -1,10 +1,20 @@
-import { PageContent } from "@/components/layout/PageContent";
+import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { createMetadata } from "@/lib/metadata";
+import { getExperiences } from "@/lib/content";
+
+export const metadata = createMetadata({
+  title: "Experience",
+  description: "Work history, responsibilities, achievements, and technologies used in my roles.",
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
+  const experiences = getExperiences();
+
   return (
-    <PageContent>
-      <h1 className="text-3xl font-bold">Experience</h1>
-      <p className="mt-4 text-muted">Coming in Sprint 3.</p>
-    </PageContent>
+    <ScrollReveal>
+      <ExperienceTimeline experiences={experiences} />
+    </ScrollReveal>
   );
 }
