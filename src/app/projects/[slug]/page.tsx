@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import { ProjectDetailView } from "@/components/projects/ProjectDetailView";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { createMetadata } from "@/lib/metadata";
+import {
+  getBreadcrumbSchema,
+  getProjectSchema,
+} from "@/lib/structured-data";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -38,5 +43,17 @@ export default async function ProjectDetailPage({
     notFound();
   }
 
-  return <ProjectDetailView project={project} />;
+  return (
+    <>
+      <JsonLd data={getProjectSchema(project)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+          { name: project.title, path: `/projects/${project.slug}` },
+        ])}
+      />
+      <ProjectDetailView project={project} />
+    </>
+  );
 }

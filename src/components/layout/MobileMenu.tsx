@@ -33,7 +33,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
+    <div
+      className="fixed inset-0 z-50 md:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-menu-title"
+    >
       <button
         type="button"
         aria-label="Close menu"
@@ -42,7 +47,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       />
       <div className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border bg-background shadow-xl">
         <div className="flex items-center justify-between border-b border-border px-6 py-4">
-          <span className="text-sm font-medium text-muted">Menu</span>
+          <span id="mobile-menu-title" className="text-sm font-medium text-muted">
+            Menu
+          </span>
           <button
               type="button"
               onClick={onClose}
@@ -77,6 +84,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "rounded-lg px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                   isActive

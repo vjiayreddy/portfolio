@@ -5,11 +5,17 @@ import { SkillsPreview } from "@/components/home/SkillsPreview";
 import { SummarySection } from "@/components/home/SummarySection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { createMetadata } from "@/lib/metadata";
 import {
   getFeaturedProjects,
   getSiteConfig,
   getSkills,
 } from "@/lib/content";
+
+export const metadata = createMetadata({
+  path: "/",
+  description: getSiteConfig().summary,
+});
 
 export default function HomePage() {
   const site = getSiteConfig();

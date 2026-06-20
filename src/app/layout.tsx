@@ -4,7 +4,10 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PageTransition } from "@/components/motion/PageTransition";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { VercelAnalytics } from "@/components/seo/VercelAnalytics";
 import { createMetadata } from "@/lib/metadata";
+import { getPersonSchema, getWebSiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,6 +34,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
+        <JsonLd data={getPersonSchema()} />
+        <JsonLd data={getWebSiteSchema()} />
         <ThemeProvider>
           <a
             href="#main-content"
@@ -43,6 +48,7 @@ export default function RootLayout({
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
+          <VercelAnalytics />
         </ThemeProvider>
       </body>
     </html>
