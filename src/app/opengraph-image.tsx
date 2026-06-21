@@ -18,7 +18,7 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #5b21b6 100%)",
+          background: "linear-gradient(135deg, #0f172a 0%, #164e63 50%, #0891b2 100%)",
           color: "white",
         }}
       >

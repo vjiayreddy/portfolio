@@ -1,7 +1,7 @@
 {
   "name": "Your Name",
-  "title": "Full-Stack Developer",
-  "tagline": "Building modern, high-performance web applications",
+  "title": "Frontend Developer",
+  "tagline": "Crafting clean, responsive web interfaces",
   "email": "hello@example.com",
   "location": "City, Country",
   "summary": "Passionate full-stack developer with expertise in Next.js, React, and cloud-native architectures. I craft scalable, user-focused products from concept to deployment.",
@@ -11,7 +11,15 @@
     "twitter": "https://twitter.com/yourusername"
   },
   "seo": {
-    "title": "Your Name — Full-Stack Developer",
+    "title": "Your Name — Frontend Developer",
     "description": "Portfolio showcasing projects, skills, and professional experience in modern web development."
+  },
+  "hero": {
+    "avatar": "/avatar.jpg",
+    "headline": {
+      "before": "I craft ",
+      "highlight": "polished frontend experiences",
+      "after": " with React & TypeScript."
+    }
   }
 }

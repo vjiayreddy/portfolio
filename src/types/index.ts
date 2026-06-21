@@ -14,6 +14,16 @@ export interface SiteConfig {
     title: string;
     description: string;
   };
+  hero: HeroContent;
+}
+
+export interface HeroContent {
+  avatar: string;
+  headline: {
+    before: string;
+    highlight: string;
+    after: string;
+  };
 }
 
 export interface Skill {

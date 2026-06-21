@@ -31,6 +31,14 @@ const siteSchema = z.object({
     title: z.string(),
     description: z.string(),
   }),
+  hero: z.object({
+    avatar: z.string(),
+    headline: z.object({
+      before: z.string(),
+      highlight: z.string(),
+      after: z.string(),
+    }),
+  }),
 });
 
 const projectFrontmatterSchema = z.object({
