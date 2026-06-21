@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { navItems } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
@@ -11,6 +11,7 @@ import { ThemeToggle } from "./ThemeToggle";
 export function HeaderNav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -45,10 +46,12 @@ export function HeaderNav() {
       <div className="flex items-center gap-2 md:gap-3">
         <ThemeToggle />
         <button
+          ref={menuTriggerRef}
           type="button"
           onClick={() => setMobileOpen(true)}
           aria-label="Open navigation menu"
           aria-expanded={mobileOpen}
+          aria-controls="mobile-menu-title"
           className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary/50 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
         >
           <svg
@@ -68,7 +71,11 @@ export function HeaderNav() {
         </button>
       </div>
 
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileMenu
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        menuTriggerRef={menuTriggerRef}
+      />
     </>
   );
 }
